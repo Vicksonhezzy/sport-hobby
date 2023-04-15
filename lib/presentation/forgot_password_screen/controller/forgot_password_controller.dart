@@ -50,7 +50,12 @@ class ForgotPasswordController extends GetxController {
           var data = json.decode(res['data']);
           if (data['success']) {
             Get.back();
-            showCustomDialog(msg: data['message'], onTap: () => Get.back());
+            showCustomDialog(
+                msg: data['message'],
+                onTap: () => Get
+                  ..back()
+                  ..back()
+                  ..toNamed(AppRoutes.logInScreen));
             return;
           }
           Get.back();

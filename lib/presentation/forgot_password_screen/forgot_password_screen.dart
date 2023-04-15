@@ -5,6 +5,7 @@ import 'package:sportbuddy/widgets/custom_button.dart';
 import 'package:sportbuddy/widgets/custom_text_form_field.dart';
 
 class ForgotPasswordScreen extends GetWidget<ForgotPasswordController> {
+  bool isUpdate = Get.arguments;
   @override
   Widget build(BuildContext context) {
     contexts = context;
@@ -60,7 +61,7 @@ class ForgotPasswordScreen extends GetWidget<ForgotPasswordController> {
                   height: getVerticalSize(
                     47,
                   ),
-                  onTap: () => controller.onTap(Get.arguments),
+                  onTap: () => controller.onTap(isUpdate),
                   text: "Continue".tr,
                   margin: getMargin(
                     left: 38,

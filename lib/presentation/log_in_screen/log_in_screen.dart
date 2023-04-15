@@ -82,6 +82,8 @@ class LogInScreen extends GetWidget<LogInController> {
                     top: 4,
                     right: 40,
                   ),
+                  textInputType: TextInputType.emailAddress,
+                  textInputAction: TextInputAction.next,
                   alignment: Alignment.center,
                 ),
                 Align(

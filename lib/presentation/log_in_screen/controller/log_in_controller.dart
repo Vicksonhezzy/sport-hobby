@@ -61,6 +61,6 @@ class LogInController extends GetxController {
   }
 
   onForgotPassword() {
-    Get.toNamed(AppRoutes.forgotPasswordScreen);
+    Get.toNamed(AppRoutes.forgotPasswordScreen, arguments: false);
   }
 }

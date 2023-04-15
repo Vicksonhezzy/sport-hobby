@@ -7,7 +7,7 @@ import '../constants/constants.dart';
 
 import 'package:http/http.dart' as http;
 
-Future<Map> httpPost({required String url, dynamic body}) async {
+Future<dynamic> httpPost({required String url, dynamic body}) async {
   print('body = $body');
   var header = {
     'Accept': 'application/json',
@@ -19,11 +19,12 @@ Future<Map> httpPost({required String url, dynamic body}) async {
     var res = await http.post(Uri.parse(baseUrl + url),
         body: json.encode(body), headers: header);
     print('data = ${res.body}');
+    var data = json.decode(res.body);
     if (res.statusCode == 200) {
-      return {'success': true, 'data': res.body};
+      return {'success': true, 'data': data};
     }
-    snackbar(msg: (json.decode(res.body))['message']);
-    return {'success': false, 'data': 'Something went wrong'};
+    snackbar(msg: data['message']);
+    return {'success': false, 'data': res.body};
   } catch (e) {
     // print('e = $e');
     snackbar(msg: e.toString());
@@ -46,7 +47,7 @@ Future<dynamic> httpGet({required String url}) async {
       return {'success': true, 'data': res.body};
     }
     snackbar(msg: (json.decode(res.body))['message']);
-    return null;
+    return {'success': false, 'data': res.body};
   } catch (e) {
     snackbar(msg: e.toString());
     print('error = ${e.toString()}');
