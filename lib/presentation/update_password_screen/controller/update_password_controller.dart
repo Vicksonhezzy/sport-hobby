@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:sportbuddy/core/app_export.dart';
 import 'package:flutter/material.dart';
 import 'package:sportbuddy/presentation/log_in_screen/models/log_in_model.dart';
@@ -13,6 +11,8 @@ class UpdatePasswordController extends GetxController {
   TextEditingController newPasswordController = TextEditingController();
 
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  late BuildContext contexts;
 
   @override
   void onReady() {
@@ -34,9 +34,10 @@ class UpdatePasswordController extends GetxController {
         "oldPassword": oldPasswordController.text,
         "newPassword": newPasswordController.text,
       };
-      var res = await httpPost(url: 'users/updatePassword/', body: body);
+      var res = await httpPost(
+          url: 'users/updatePassword/', body: body, context: contexts);
       if (res['success']) {
-        var data = json.decode(res['data']);
+        var data = res['data'];
         if (data['success']) {
           Get.back();
           showCustomDialog(

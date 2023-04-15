@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:sportbuddy/core/app_export.dart';
 import 'package:flutter/material.dart';
 import 'package:sportbuddy/core/network/http_calls.dart';
@@ -14,6 +12,8 @@ class LogInController extends GetxController {
 
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
 
+  late BuildContext contexts;
+
   @override
   void onReady() {
     super.onReady();
@@ -22,8 +22,8 @@ class LogInController extends GetxController {
   @override
   void onClose() {
     super.onClose();
-    emailController.dispose();
-    passwordController.dispose();
+    // emailController.dispose();
+    // passwordController.dispose();
   }
 
   onLogin() async {
@@ -33,9 +33,11 @@ class LogInController extends GetxController {
         "username": emailController.text.trim(),
         "password": passwordController.text,
       };
-      var res = await httpPost(url: 'users/login', body: body);
+      var res =
+          await httpPost(url: 'users/login', body: body, context: contexts);
       if (res['success']) {
-        var data = json.decode(res['data']);
+        print('res = $res');
+        var data = res['data'];
         if (data['success']) {
           user = UserModel.fromJson(data);
           Get.back();

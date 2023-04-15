@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:sportbuddy/core/app_export.dart';
 import 'package:flutter/material.dart';
 
@@ -17,6 +15,8 @@ class SignUpController extends GetxController {
   TextEditingController passwordController = TextEditingController();
 
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  late BuildContext contexts;
 
   String? initialValue;
 
@@ -59,9 +59,10 @@ class SignUpController extends GetxController {
         "password": passwordController.text,
         "interest": interest,
       };
-      var res = await httpPost(url: 'users/registration', body: body);
+      var res = await httpPost(
+          url: 'users/registration', body: body, context: contexts);
       if (res['success']) {
-        user = UserModel.fromJson(json.decode(res['data']));
+        user = UserModel.fromJson(res['data']);
         String number;
         if (!numberController.text.startsWith("+234")) {
           number = "+234" + numberController.text.trim();
@@ -72,8 +73,10 @@ class SignUpController extends GetxController {
           "id": user.id,
           "number": number,
         };
-        var _res =
-            await httpPost(url: 'users/sendPhoneVerificationCode', body: body);
+        var _res = await httpPost(
+            url: 'users/sendPhoneVerificationCode',
+            body: body,
+            context: contexts);
         if (_res['success']) {
           Get.back();
           Get.toNamed(AppRoutes.otpVerificationScreen);

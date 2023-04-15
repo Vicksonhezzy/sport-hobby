@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 const String baseUrl = 'https://test-chat-ai.onrender.com/';
-late BuildContext contexts;
+// late GlobalKey<ScaffoldState> scaffoldKey;

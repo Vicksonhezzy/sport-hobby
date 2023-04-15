@@ -16,6 +16,7 @@ class ProfilePage extends StatelessWidget {
         body: GetBuilder<ProfileController>(
             init: ProfileController(),
             builder: (controller) {
+              controller.contexts = context;
               return Container(
                 width: double.maxFinite,
                 decoration: AppDecoration.fillWhiteA700,

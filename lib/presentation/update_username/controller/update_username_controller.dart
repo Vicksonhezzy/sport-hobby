@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:sportbuddy/core/app_export.dart';
 import 'package:flutter/material.dart';
 
@@ -11,6 +9,8 @@ class UpdateUsernameController extends GetxController {
   TextEditingController usernameController = TextEditingController();
 
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  late BuildContext contexts;
 
   @override
   void onReady() {
@@ -30,9 +30,10 @@ class UpdateUsernameController extends GetxController {
         "userId": user.id,
         "username": usernameController.text,
       };
-      var res = await httpPost(url: 'users/updateUserName', body: body);
+      var res = await httpPost(
+          url: 'users/updateUserName', body: body, context: contexts);
       if (res['success']) {
-        var data = json.decode(res['data']);
+        var data = res['data'];
         if (data['success']) {
           Get.back();
           showCustomDialog(

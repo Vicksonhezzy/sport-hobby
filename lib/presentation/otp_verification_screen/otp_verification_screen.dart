@@ -8,7 +8,7 @@ import 'package:sportbuddy/widgets/custom_button.dart';
 class OtpVerificationScreen extends GetWidget<OtpVerificationController> {
   @override
   Widget build(BuildContext context) {
-    contexts = context;
+    controller.contexts = context;
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,

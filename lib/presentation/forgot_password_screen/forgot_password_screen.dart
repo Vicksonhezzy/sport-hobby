@@ -1,3 +1,5 @@
+import 'package:sportbuddy/core/utils/validation_functions.dart';
+
 import 'controller/forgot_password_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:sportbuddy/core/app_export.dart';
@@ -8,7 +10,7 @@ class ForgotPasswordScreen extends GetWidget<ForgotPasswordController> {
   bool isUpdate = Get.arguments;
   @override
   Widget build(BuildContext context) {
-    contexts = context;
+    controller.contexts = context;
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
@@ -49,6 +51,13 @@ class ForgotPasswordScreen extends GetWidget<ForgotPasswordController> {
                 CustomTextFormField(
                   focusNode: FocusNode(),
                   controller: controller.emailController,
+                  validator: (value) {
+                    if (value == null ||
+                        !isValidEmail(value, isRequired: true)) {
+                      return "Please enter valid email";
+                    }
+                    return null;
+                  },
                   margin: getMargin(
                     left: 41,
                     top: 4,

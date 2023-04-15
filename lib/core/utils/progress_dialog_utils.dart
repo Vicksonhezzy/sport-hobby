@@ -48,5 +48,5 @@ void showCustomDialog(
 }
 
 ///show snackbar
-void snackbar({required String msg}) =>
-    ScaffoldMessenger.of(contexts).showSnackBar(SnackBar(content: Text(msg)));
+void snackbar(BuildContext context, {required String msg}) =>
+    ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(msg)));

@@ -3,14 +3,13 @@ import 'package:sportbuddy/widgets/random_widgets..dart';
 import 'controller/log_in_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:sportbuddy/core/app_export.dart';
-import 'package:sportbuddy/core/utils/validation_functions.dart';
 import 'package:sportbuddy/widgets/custom_button.dart';
 import 'package:sportbuddy/widgets/custom_text_form_field.dart';
 
 class LogInScreen extends GetWidget<LogInController> {
   @override
   Widget build(BuildContext context) {
-    contexts = context;
+    controller.contexts = context;
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
@@ -77,6 +76,8 @@ class LogInScreen extends GetWidget<LogInController> {
                 CustomTextFormField(
                   focusNode: FocusNode(),
                   controller: controller.emailController,
+                  validator: (value) =>
+                      value == null || value.isEmpty ? 'Field required' : null,
                   margin: getMargin(
                     left: 41,
                     top: 4,
@@ -140,7 +141,7 @@ class LogInScreen extends GetWidget<LogInController> {
                   height: getVerticalSize(
                     47,
                   ),
-                  text: "Get Started".tr,
+                  text: "Log In".tr,
                   onTap: () => controller.onLogin(),
                   margin: getMargin(
                     left: 41,

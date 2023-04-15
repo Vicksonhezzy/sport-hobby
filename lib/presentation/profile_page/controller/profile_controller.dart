@@ -1,6 +1,6 @@
 import 'dart:async';
-import 'dart:convert';
 
+import 'package:flutter/cupertino.dart';
 import 'package:sportbuddy/core/app_export.dart';
 
 import '../../../core/network/http_calls.dart';
@@ -8,6 +8,8 @@ import '../../log_in_screen/models/log_in_model.dart';
 
 class ProfileController extends GetxController {
   late Timer timer;
+
+  late BuildContext contexts;
 
   @override
   void onInit() {
@@ -29,9 +31,10 @@ class ProfileController extends GetxController {
   }
 
   getUserById() async {
-    var _res = await httpGet(url: 'users/getUserById/${user.id}');
+    var _res =
+        await httpGet(url: 'users/getUserById/${user.id}', context: contexts);
     if (_res['success']) {
-      user = UserModel.fromJson(json.decode(_res['data']));
+      user = UserModel.fromJson(_res['data']);
       update();
     }
     return;

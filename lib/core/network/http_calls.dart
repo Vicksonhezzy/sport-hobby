@@ -1,13 +1,14 @@
 import 'dart:convert';
 
+import 'package:flutter/cupertino.dart';
 import 'package:sportbuddy/core/utils/progress_dialog_utils.dart';
-import 'package:sportbuddy/presentation/log_in_screen/models/log_in_model.dart';
 
 import '../constants/constants.dart';
 
 import 'package:http/http.dart' as http;
 
-Future<dynamic> httpPost({required String url, dynamic body}) async {
+Future<dynamic> httpPost(
+    {required String url, required BuildContext context, dynamic body}) async {
   print('body = $body');
   var header = {
     'Accept': 'application/json',
@@ -23,17 +24,18 @@ Future<dynamic> httpPost({required String url, dynamic body}) async {
     if (res.statusCode == 200) {
       return {'success': true, 'data': data};
     }
-    snackbar(msg: data['message']);
-    return {'success': false, 'data': res.body};
+    snackbar(context, msg: data['message']);
+    return {'success': false, 'data': data};
   } catch (e) {
     // print('e = $e');
-    snackbar(msg: e.toString());
+    snackbar(context, msg: e.toString());
     print('error = ${e.toString()}');
     return {'success': false, 'data': e.toString()};
   }
 }
 
-Future<dynamic> httpGet({required String url}) async {
+Future<dynamic> httpGet(
+    {required String url, required BuildContext context}) async {
   var header = {
     'Accept': 'application/json',
     'Content-Type': 'application/json',
@@ -43,13 +45,14 @@ Future<dynamic> httpGet({required String url}) async {
   try {
     var res = await http.get(Uri.parse(baseUrl + url), headers: header);
     print('data = ${res.body}');
+    var data = json.decode(res.body);
     if (res.statusCode == 200) {
-      return {'success': true, 'data': res.body};
+      return {'success': true, 'data': data};
     }
-    snackbar(msg: (json.decode(res.body))['message']);
-    return {'success': false, 'data': res.body};
+    snackbar(context, msg: data['message']);
+    return {'success': false, 'data': data};
   } catch (e) {
-    snackbar(msg: e.toString());
+    snackbar(context, msg: e.toString());
     print('error = ${e.toString()}');
     throw e.toString();
   }

@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:sportbuddy/core/app_export.dart';
 import 'package:flutter/material.dart';
 import 'package:sportbuddy/core/utils/progress_dialog_utils.dart';
@@ -11,6 +9,8 @@ class ForgotPasswordController extends GetxController {
   TextEditingController emailController = TextEditingController();
 
   GlobalKey<FormState> formKey = GlobalKey<FormState>();
+
+  late BuildContext contexts;
 
   @override
   void onReady() {
@@ -31,12 +31,17 @@ class ForgotPasswordController extends GetxController {
           "userId": user.id,
           "email": emailController.text.trim(),
         };
-        var res = await httpPost(url: 'users/updateEmail', body: body);
+        var res = await httpPost(
+            url: 'users/updateEmail', body: body, context: contexts);
         if (res['success']) {
-          var data = json.decode(res['data']);
+          var data = res['data'];
           if (data['success']) {
             Get.back();
-            showCustomDialog(msg: data['message'], onTap: () => Get.back());
+            showCustomDialog(
+                msg: data['message'],
+                onTap: () => Get
+                  ..back()
+                  ..back());
             return;
           }
           Get.back();
@@ -44,18 +49,16 @@ class ForgotPasswordController extends GetxController {
         }
         Get.back();
       } else {
-        var res =
-            await httpGet(url: 'users/forgotPassword/${emailController.text}');
+        var res = await httpGet(
+            url: 'users/forgotPassword/${emailController.text}',
+            context: contexts);
         if (res['success']) {
-          var data = json.decode(res['data']);
+          var data = res['data'];
           if (data['success']) {
             Get.back();
             showCustomDialog(
                 msg: data['message'],
-                onTap: () => Get
-                  ..back()
-                  ..back()
-                  ..toNamed(AppRoutes.logInScreen));
+                onTap: () => Get.offAllNamed(AppRoutes.logInScreen));
             return;
           }
           Get.back();

@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:sportbuddy/core/app_export.dart';
 import 'package:sms_autofill/sms_autofill.dart';
 import 'package:flutter/material.dart';
@@ -10,6 +8,8 @@ import '../../../core/network/http_calls.dart';
 
 class OtpVerificationController extends GetxController with CodeAutoFill {
   Rx<TextEditingController> otpController = TextEditingController().obs;
+
+  late BuildContext contexts;
 
   @override
   void codeUpdated() {
@@ -44,9 +44,10 @@ class OtpVerificationController extends GetxController with CodeAutoFill {
         "id": user.id,
         "code": otpController.value.text,
       };
-      var res = await httpPost(url: 'users/verifyCode', body: body);
+      var res = await httpPost(
+          url: 'users/verifyCode', body: body, context: contexts);
       if (res['success']) {
-        var data = json.decode(res['data']);
+        var data = res['data'];
         if (data['success']) {
           Get
             ..back()

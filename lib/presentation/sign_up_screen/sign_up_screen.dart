@@ -10,7 +10,7 @@ import 'package:sportbuddy/widgets/custom_text_form_field.dart';
 class SignUpScreen extends GetWidget<SignUpController> {
   @override
   Widget build(BuildContext context) {
-    contexts = context;
+    controller.contexts = context;
     return SafeArea(
       child: Scaffold(
         resizeToAvoidBottomInset: false,
