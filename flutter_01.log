@@ -1,0 +1,79 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter run
+
+## exception
+
+RPCError: ext.flutter.debugDumpRenderTree: (-32000) Server error
+{"exception":"Null check operator used on a null value","stack":"#0      RenderIndexedStack.debugDescribeChildren (package:flutter/src/rendering/stack.dart:743:26)\n#1      DiagnosticableTreeNode.getChildren (package:flutter/src/foundation/diagnostics.dart:3041:48)\n#2      TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1187:43)\n#3      TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#4      TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1376:33)\n#5      TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#6      TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#7      TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#8      TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1376:33)\n#9      TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#10     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#11     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#12     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#13     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#14     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#15     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#16     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#17     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#18     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#19     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#20     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#21     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#22     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#23     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#24     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#25     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#26     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#27     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#28     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#29     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#30     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#31     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#32     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#33     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#34     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#35     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#36     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#37     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#38     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1376:33)\n#39     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#40     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#41     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#42     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1376:33)\n#43     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#44     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#45     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#46     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#47     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#48     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#49     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#50     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#51     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#52     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#53     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#54     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#55     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#56     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#57     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#58     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#59     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#60     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#61     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#62     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#63     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#64     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#65     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#66     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#67     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#68     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#69     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#70     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#71     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#72     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#73     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#74     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#75     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#76     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#77     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#78     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#79     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#80     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#81     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#82     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#83     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#84     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#85     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#86     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1376:33)\n#87     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#88     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#89     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#90     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#91     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#92     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#93     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#94     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#95     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#96     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#97     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#98     TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#99     TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#100    TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#101    TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#102    TextTreeRenderer._debugRender (package:flutter/src/foundation/diagnostics.dart:1355:33)\n#103    TextTreeRenderer.render (package:flutter/src/foundation/diagnostics.dart:1121:14)\n#104    DiagnosticsNode.toStringDeep.<anonymous closure> (package:flutter/src/foundation/diagnostics.dart:1776:9)\n#105    DiagnosticsNode.toStringDeep (package:flutter/src/foundation/diagnostics.dart:1783:6)\n#106    DiagnosticableTreeMixin.toStringDeep (package:flutter/src/foundation/diagnostics.dart:3555:32)\n#107    RenderObject.toStringDeep (package:flutter/src/rendering/object.dart:3008:33)\n#108    RendererBinding.initServiceExtensions.<anonymous closure> (package:flutter/src/rendering/binding.dart:154:67)\n#109    RendererBinding.initServiceExtensions.<anonymous closure> (package:flutter/src/rendering/binding.dart:153:19)\n#110    BindingBase.registerServiceExtension.<anonymous closure> (package:flutter/src/foundation/binding.dart:851:32)\n<asynchronous suspension>\n","method":"ext.flutter.debugDumpRenderTree"}
+
+```
+#0      new _OutstandingRequest (package:vm_service/src/vm_service.dart:1734:45)
+#1      VmService._call (package:vm_service/src/vm_service.dart:2245:21)
+#2      VmService.callServiceExtension (package:vm_service/src/vm_service.dart:2216:14)
+#3      FlutterVmService._checkedCallServiceExtension (package:flutter_tools/src/vmservice.dart:776:28)
+#4      FlutterVmService.invokeFlutterExtensionRpcRaw (package:flutter_tools/src/vmservice.dart:795:49)
+#5      FlutterVmService.flutterDebugDumpRenderTree (package:flutter_tools/src/vmservice.dart:554:50)
+#6      ResidentHandlers.debugDumpRenderTree (package:flutter_tools/src/resident_runner.dart:668:52)
+<asynchronous suspension>
+#7      TerminalHandler.processTerminalInput (package:flutter_tools/src/resident_runner.dart:1685:7)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel stable, 3.0.5, on Microsoft Windows [Version 10.0.19044.2728], locale en-NG)
+    • Flutter version 3.0.5 at C:\flutter\flutter
+    • Upstream repository https://github.com/flutter/flutter.git
+    • Framework revision f1875d570e (9 months ago), 2022-07-13 11:24:16 -0700
+    • Engine revision e85ea0e79c
+    • Dart version 2.17.6
+    • DevTools version 2.12.2
+
+[✓] Android toolchain - develop for Android devices (Android SDK version 33.0.0)
+    • Android SDK at C:\Users\victo\AppData\Local\Android\sdk
+    • Platform android-33, build-tools 33.0.0
+    • ANDROID_HOME = C:\Users\victo\AppData\Local\Android
+    • Java binary at: C:\Program Files\Android\Android Studio\jre\bin\java
+    • Java version OpenJDK Runtime Environment (build 11.0.12+7-b1504.28-7817840)
+    • All Android licenses accepted.
+
+[✓] Chrome - develop for the web
+    • Chrome at C:\Program Files\Google\Chrome\Application\chrome.exe
+
+[!] Visual Studio - develop for Windows (Visual Studio Community 2022 17.2.6)
+    • Visual Studio at C:\Program Files\Microsoft Visual Studio\2022\Community
+    • Visual Studio Community 2022 version 17.2.32630.192
+    ✗ Visual Studio is missing necessary components. Please re-run the Visual Studio installer for the "Desktop development with C++" workload, and include these components:
+        MSVC v142 - VS 2019 C++ x64/x86 build tools
+         - If there are multiple build tool versions available, install the latest
+        C++ CMake tools for Windows
+        Windows 10 SDK
+
+[✓] Android Studio (version 2021.2)
+    • Android Studio at C:\Program Files\Android\Android Studio
+    • Flutter plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/9212-flutter
+    • Dart plugin can be installed from:
+      🔨 https://plugins.jetbrains.com/plugin/6351-dart
+    • Java version OpenJDK Runtime Environment (build 11.0.12+7-b1504.28-7817840)
+
+[✓] VS Code (version 1.76.2)
+    • VS Code at C:\Users\victo\AppData\Local\Programs\Microsoft VS Code
+    • Flutter extension version 3.60.0
+
+[✓] Connected device (4 available)
+    • SM J600F (mobile) • 520044b54a805577 • android-arm    • Android 8.0.0 (API 26)
+    • Windows (desktop) • windows          • windows-x64    • Microsoft Windows [Version 10.0.19044.2728]
+    • Chrome (web)      • chrome           • web-javascript • Google Chrome 111.0.5563.147
+    • Edge (web)        • edge             • web-javascript • Microsoft Edge 111.0.1661.62
+
+[✓] HTTP Host Availability
+    • All required HTTP hosts are available
+
+! Doctor found issues in 1 category.
+```
